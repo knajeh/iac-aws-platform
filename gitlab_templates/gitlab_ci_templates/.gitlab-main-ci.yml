@@ -146,7 +146,7 @@ Destroy Environment:
 Destroy k3s Cluster:
   stage: "Destroy"  
   image: 
-    name: ghcr.io/pm4ml/k3sbootstrap:$K3S_IAC_IMAGE_VERSION
+    name: ghcr.io/knajeh/k3sbootstrap:$K3S_IAC_IMAGE_VERSION
   before_script:
     - export bucket=$REMOTE_STATE_BUCKET
     - export TF_VAR_bucket=$REMOTE_STATE_BUCKET
@@ -185,7 +185,7 @@ Destroy k3s Cluster:
 Undeploy PM4ML Charts:
   stage: "Destroy"  
   image: 
-    name: ghcr.io/pm4ml/k3sbootstrap:$K3S_IAC_IMAGE_VERSION
+    name: ghcr.io/knajeh/k3sbootstrap:$K3S_IAC_IMAGE_VERSION
   before_script:
     - export bucket=$REMOTE_STATE_BUCKET
     - export TF_VAR_bucket=$REMOTE_STATE_BUCKET
@@ -243,7 +243,7 @@ Deploy AWS Infrastructure:
 
 .create_k3s_cluster: &create_k3s_cluster
   image: 
-    name: ghcr.io/pm4ml/k3sbootstrap:$K3S_IAC_IMAGE_VERSION
+    name: ghcr.io/knajeh/k3sbootstrap:$K3S_IAC_IMAGE_VERSION
   before_script:
     - export bucket=$REMOTE_STATE_BUCKET
     - export TF_VAR_bucket=$REMOTE_STATE_BUCKET
@@ -382,7 +382,7 @@ Create Main Cluster:
 
 .install_internal_pm4mls: &install_internal_pm4mls
   image: 
-    name: ghcr.io/pm4ml/k3sbootstrap:$K3S_IAC_IMAGE_VERSION
+    name: ghcr.io/knajeh/k3sbootstrap:$K3S_IAC_IMAGE_VERSION
   before_script:
     - export bucket=$REMOTE_STATE_BUCKET
     - export TF_VAR_bucket=$REMOTE_STATE_BUCKET
